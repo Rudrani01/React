@@ -15,13 +15,13 @@ function RestaurantCard(props) {
   } = resData?.info || {}; // use info instead of data
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
       <img
-        className="res-logo"
+        className="res-logo rounded-lg"
         alt="res-logo"
         src={cloudinaryImageId ? CDN_URL + cloudinaryImageId : ""}
       />
-      <h3>{name || "No Name"}</h3>
+      <h3 className="font-bold py-4 text-lg">{name || "No Name"}</h3>
       <h4>{cuisines ? cuisines.join(", ") : "N/A"}</h4>
       <h4>{avgRating ? `${avgRating} stars` : "No rating"}</h4>
       <h4>{costForTwo || "Cost info unavailable"}</h4>
