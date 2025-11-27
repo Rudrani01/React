@@ -1,41 +1,26 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useRestaurants from "../utils/useRestaurants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const {
+    listOfRestaurants,
+    filteredRestaurant,
+    setFilteredRestaurant,
+    searchText,
+    setSearchText,
+  } = useRestaurants();
 
-  const fetchData = async () => {
-    try {
-      const data = await fetch(
-        "https://raw.githubusercontent.com/Rudrani01/React/refs/heads/main/mock-data/swiggy-api.json"
-      );
-      const json = await data.json();
-
-      console.log("Full JSON loaded:", json);
-
-      // ✅ Correct path - json.data.cards[1]
-      const restaurants =
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-
-      console.log("Extracted restaurants:", restaurants);
-      console.log("Total restaurants found:", restaurants.length);
-
-      setListOfRestaurants(restaurants);
-      setFilteredRestaurant(restaurants);
-    } catch (err) {
-      console.error("Failed to load restaurants:", err);
-      setListOfRestaurants([]);
-      setFilteredRestaurant([]);
-    }
-  };
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you're offline!! Please check your internet connection.
+      </h1>
+    );
 
   if (!listOfRestaurants || listOfRestaurants.length === 0)
     return <Shimmer />;
@@ -50,12 +35,11 @@ const Body = () => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
+
           <button
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
-                res.info.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestaurant(filtered);
             }}
@@ -81,9 +65,10 @@ const Body = () => {
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
-            to={"/restaurants/" + restaurant.info.id}><RestaurantCard
-            resData={restaurant} />
-            </Link>
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>

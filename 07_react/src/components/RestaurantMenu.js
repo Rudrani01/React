@@ -1,35 +1,13 @@
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { MENU_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
-  const [resInfo, setResInfo] = useState(null);
+ const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+ const resInfo = useRestaurantMenu(resId);
 
-  const fetchMenu = async () => {
-    try {
-      const data = await fetch(MENU_API + resId + ".json");
-      
-      if (!data.ok) throw new Error("Menu not found");
-      
-      const json = await data.json();
-      setResInfo(json.data);
-    } catch (err) {
-      console.log("Loading dummy menu...");
-      const data = await fetch(
-        "https://raw.githubusercontent.com/Rudrani01/React/main/mock-data/mock-menus/menu-default.json"
-      );
-      const json = await data.json();
-      setResInfo(json.data);
-    }
-  };
-
-  if (resInfo === null) return <Shimmer />;
+ if (resInfo === null) return <Shimmer />;
 
   // ✅ Try multiple paths for restaurant info
   const restaurantInfo =
@@ -79,7 +57,9 @@ const RestaurantMenu = () => {
       )}
     </div>
   );
-};
+
+  };
+
 
 export default RestaurantMenu; 
 //   return (
