@@ -3,6 +3,25 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurants from "../utils/useRestaurants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
+
+// Higher Order Component
+const withPromotedLabel = (Component) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg z-10">
+          Promoted
+        </label>
+        <Component {...props} />
+      </div>
+    );
+  };
+};
+
+// Create the promoted component using the HOC
+const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
 const Body = () => {
   const onlineStatus = useOnlineStatus();
@@ -21,6 +40,9 @@ const Body = () => {
         Looks like you're offline!! Please check your internet connection.
       </h1>
     );
+
+    const { loggedInUser, setUserName} = useContext(UserContext);
+
 
   if (!listOfRestaurants || listOfRestaurants.length === 0)
     return <Shimmer />;
@@ -62,6 +84,14 @@ const Body = () => {
           </button>
         </div>
 
+         <div className="search m-4 p-4 flex items-center">
+            <label>UserName : </label>
+            <input className="border border-black p-2"
+             value={loggedInUser}
+             onChange={(e) => setUserName(e.target.value)}></input>
+        </div>
+
+
       </div>
 
       <div className="res-container flex flex-wrap">
@@ -70,7 +100,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

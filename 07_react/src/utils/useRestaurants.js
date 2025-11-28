@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 
-const useRestaurantCard = () => {
+const useRestaurants = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  console.log("Body Rendered", listOfRestaurants);
 
   const fetchData = async () => {
     try {
@@ -30,7 +32,7 @@ const useRestaurantCard = () => {
     fetchData();
   }, []);
 
-  // Expose everything Body.js needs
+  // Return only the data and state management functions
   return {
     listOfRestaurants,
     filteredRestaurant,
@@ -40,4 +42,4 @@ const useRestaurantCard = () => {
   };
 };
 
-export default useRestaurantCard;
+export default useRestaurants;
