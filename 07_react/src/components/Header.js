@@ -3,6 +3,7 @@ import { useState, useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -20,6 +21,13 @@ const Header = () => {
   useEffect(() => {
     console.log("useEffect called");
   }, [])
+
+  // Selector -- hook inside react
+  // useSelector hook comes form react-redux lib
+  // Subscribing to the store using selector -- gives us access to the store
+  // cart will get the data of the items 
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     //              Header
@@ -50,8 +58,8 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
 
-          <li className="px-4">
-            <Link to="/cart">Cart</Link>
+          <li className="px-4 font-bold text-xl">
+            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
           </li>
 
           <button className="login"
