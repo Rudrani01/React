@@ -1,24 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurants from "../utils/useRestaurants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
-
-// Higher Order Component
-const withPromotedLabel = (Component) => {
-  return (props) => {
-    return (
-      <div className="relative">
-        <label className="absolute bg-black text-white m-2 p-2 rounded-lg z-10">
-          Promoted
-        </label>
-        <Component {...props} />
-      </div>
-    );
-  };
-};
 
 // Create the promoted component using the HOC
 const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
@@ -53,6 +39,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid = "searchInput"
             className="search-box border border-solid border-black"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -84,9 +71,9 @@ const Body = () => {
           </button>
         </div>
 
-         <div className="search m-4 p-4 flex items-center">
+         <div className="search m-4 p-4 flex items-center gap-3">
             <label>UserName : </label>
-            <input className="border border-black p-2"
+            <input className="border border-black p-2 rounded-lg"
              value={loggedInUser}
              onChange={(e) => setUserName(e.target.value)}></input>
         </div>
@@ -94,7 +81,7 @@ const Body = () => {
 
       </div>
 
-      <div className="res-container flex flex-wrap">
+      <div className="res-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

@@ -14,7 +14,6 @@ class UserClass extends React.Component {
             userInfo: {
                 name: "Dummy",
                 location: "Default",
-                avatar_url: "htp://dummy-photo.com"
             },
         };
         console.log(this.props.name + "Child Constructor");
@@ -24,11 +23,12 @@ class UserClass extends React.Component {
         console.log(this.props.name + "Child Component Did Mount");
 
         // API Call
-        const data = await fetch("https://api.github.com/users/Rudrani01");
+        const data = await fetch("https://raw.githubusercontent.com/Rudrani01/React/refs/heads/main/mock-data/userData.json");
         const json = await data.json();
 
+        // Since your JSON has a "user" object, access it like this:
         this.setState({
-            userInfo: json,
+            userInfo: json.user,
         });
 
         console.log(json);
@@ -49,10 +49,10 @@ class UserClass extends React.Component {
         console.log(this.props.name + "Child Render");
 
 
-        const { name, location, avatar_url } = this.state.userInfo;
+        const { name, location } = this.state.userInfo;
 
         return (
-            <div className="user-card">
+            <div className="user-card m-4 p-6 bg-gray-100 rounded-lg shadow-md">
                 {/* <h1>Count: {count} </h1>
                 <button onClick={() => {
                     // Never directly update your state variable
@@ -65,10 +65,9 @@ class UserClass extends React.Component {
                 >
                     Count Increase
                 </button> */}
-                <img src="{avatar_url}"></img>
-                <h2>Name: {name} </h2>
-                <h3>Location: {location} </h3>
-                <h4>Contact: @rudrani</h4>
+                <h2 className="font-bold text-xl">Name: {name} </h2>
+                <h3 className="text-gray-700">Location: {location} </h3>
+                <h4 className="text-gray-600">Contact: @rudrani</h4>
             </div>
         );
     }

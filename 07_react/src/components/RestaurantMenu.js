@@ -19,7 +19,7 @@ const RestaurantMenu = () => {
 
   // console.log("Current showIndex:", showIndex);
 
-  if (resInfo === null) return <Shimmer />;
+  // if (resInfo === null) return <Shimmer />;
 
   // Get restaurant info
   const restaurantInfo = resInfo?.cards?.[2]?.card?.card?.info || {};

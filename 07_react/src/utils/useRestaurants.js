@@ -4,6 +4,7 @@ const useRestaurants = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [loading, setLoading] = useState(true); // loading for shimmer 
 
   console.log("Body Rendered", listOfRestaurants);
 
@@ -21,10 +22,13 @@ const useRestaurants = () => {
 
       setListOfRestaurants(restaurants);
       setFilteredRestaurant(restaurants);
+
+    
     } catch (err) {
       console.error("Failed to load restaurants:", err);
       setListOfRestaurants([]);
       setFilteredRestaurant([]);
+      setLoading(false);
     }
   };
 
@@ -39,6 +43,7 @@ const useRestaurants = () => {
     setFilteredRestaurant,
     searchText,
     setSearchText,
+    loading,
   };
 };
 

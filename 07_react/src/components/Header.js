@@ -1,4 +1,4 @@
-import { LOGO_URL } from "../utils/constants";
+import { LOGO_URL, CART } from "../utils/constants";
 import { useState, useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -53,10 +53,10 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-
+{/* 
           <li className="px-4">
             <Link to="/grocery">Grocery</Link>
-          </li>
+          </li> */}
 
           <li className="px-4 font-bold text-xl">
             <Link to="/cart">Cart - ({cartItems.length} items)</Link>

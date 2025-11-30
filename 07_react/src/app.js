@@ -23,7 +23,7 @@ import '../index.css';
 // on demand loading
 // dynamic import
 
-const Grocery = lazy(() => import("./components/Grocery"));
+// const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
 
 // app component 
@@ -82,14 +82,14 @@ const appRouter = createBrowserRouter([
                 element: <Contact />,
             },
 
-            {
-                path: "/grocery",
-                element: (
-                    <Suspense fallback={<h1>Loading....</h1>}>
-                        <Grocery />
-                    </Suspense>
-                ),
-            },
+            // {
+            //     path: "/grocery",
+            //     element: (
+            //         <Suspense fallback={<h1>Loading....</h1>}>
+            //             <Grocery />
+            //         </Suspense>
+            //     ),
+            // },
             /**Dynamic Routing */
             {
                 path: "/restaurants/:resId",

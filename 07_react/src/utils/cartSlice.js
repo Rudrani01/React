@@ -12,13 +12,27 @@ const cartSlice = createSlice({
             // mutating the state over here
             state.items.push(action.payload);
         },
+
+
+        // removeItem: (state, action) => {
+        //     state.items.pop();
+        // },
         removeItem: (state, action) => {
-            state.items.pop();
-        },
+    const idToRemove = action.payload.id;
+    // Remove only the first occurrence of the item with this id
+    const index = state.items.findIndex(i => i.card.info.id === idToRemove);
+    if (index >= 0) {
+        state.items.splice(index, 1);
+    }
+},
+
+
+
+
         // originalState = {items: ["pizza"]}
         clearCart: (state, action) => {
-        // RTK - either mutate the existing state or return a new state
-        // state.items.length = 0; // originalState = []
+            // RTK - either mutate the existing state or return a new state
+            // state.items.length = 0; // originalState = []
 
             return { items: [] }; // this new object will be replaced inside originalState = { items: [] }
 
@@ -30,7 +44,7 @@ const cartSlice = createSlice({
 
 
 
-export const {addItem, removeItem, clearCart} = cartSlice.actions;
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
 
 // exporting just 1 reducer from it -- reducer
 export default cartSlice.reducer;
