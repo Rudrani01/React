@@ -16,7 +16,7 @@ const useRestaurantMenu = (resId) => {
       if (!response.ok) {
         console.log(`Menu for ${resId} not found, using default menu`);
         response = await fetch(
-          "https://raw.githubusercontent.com/Rudrani01/React/main/mock-data/mock-menus/menu-default.json"
+          "https://raw.githubusercontent.com/Rudrani01/React/refs/heads/main/mock-data/mock-menus/menu-439636.json"
         );
       }
       
