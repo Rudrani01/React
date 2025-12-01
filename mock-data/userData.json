@@ -1,24 +1,16 @@
 {
-  "user": {
-    "id": 1,
-    "name": "Rudrani Dhomne",
-    "title": "Frontend Developer",
-    "tagline": "Building delightful web experiences with React ✨",
-    "about": "This is my React-based online food ordering application - FoodExpress. A modern, responsive food delivery platform inspired by Swiggy, built with React, Redux, and Tailwind CSS.",
-    "location": "Nagpur, Maharashtra, India",
-    "email": "dhomnerudrani@gmail.com",
-    "github": "https://github.com/Rudrani01",
-    "linkedin": "https://www.linkedin.com/in/rudranidhomne/",
-    "bio": "Passionate about creating seamless user experiences and building scalable web applications. Currently learning and implementing modern React patterns and best practices.",
-    "skills": [
-      "React.js",
-      "JavaScript",
-      "Redux Toolkit",
-      "Tailwind CSS",
-      "HTML5",
-      "CSS3",
-      "Git & GitHub",
-      "Responsive Design"
-    ]
-  }
+  "about": "FoodExpress is a React-based food ordering platform. Users can browse restaurants, filter by ratings, view menus by category, and manage their cart.",
+  "features": [
+    "Browse and filter restaurants",
+    "Category-wise menus",
+    "Cart management",
+    "Responsive interface"
+  ],
+  "techStack": [
+    "React.js",
+    "Redux Toolkit",
+    "Tailwind CSS",
+    "Custom Hooks",
+    "Lazy Loading"
+  ]
 }
