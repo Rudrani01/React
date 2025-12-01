@@ -33,7 +33,7 @@
           "card": {
             "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
             "info": {
-              "id": "610982",
+              "id": "439636",
               "name": "Madno - House of Sundaes",
               "city": "Bangalore",
               "slugs": {
@@ -41,7 +41,7 @@
                 "city": "bangalore"
               },
               "uniqueId": "e51e6528-4859-48c8-8fed-e84c17dc2d76",
-              "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/10/24/da40cb41-9b52-458d-bc6d-2872b4a32d43_610982.JPG",
+              "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/10/24/da40cb41-9b52-458d-bc6d-2872b4a32d43_439636.JPG",
               "locality": "2nd Stage",
               "areaName": "Btm Layout",
               "costForTwo": "25000",
@@ -53,7 +53,7 @@
               "avgRating": 4.3,
               "veg": true,
               "feeDetails": {
-                "restaurantId": "610982",
+                "restaurantId": "439636",
                 "fees": [
                   {
 
@@ -64,7 +64,7 @@
               "avgRatingString": "4.3",
               "totalRatingsString": "275 ratings",
               "sla": {
-                "restaurantId": "610982",
+                "restaurantId": "439636",
                 "deliveryTime": 18,
                 "minDeliveryTime": 15,
                 "maxDeliveryTime": 20,
@@ -182,7 +182,7 @@
                 }
               ],
               "headerBanner": {
-                "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/610982"
+                "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/439636"
               },
               "ratingSlab": "RATING_SLAB_5",
               "orderabilityCommunication": {
@@ -343,7 +343,7 @@
                       "couponCode": "USE BUY1GET1",
                       "description": "ON SELECT ITEMS",
                       "offerType": "offers",
-                      "restId": "610982",
+                      "restId": "439636",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE BUY1GET1"
@@ -363,7 +363,7 @@
                       "expiryTime": "1970-01-01T00:00:00Z",
                       "description": "ON SELECT ITEMS |",
                       "offerType": "offers",
-                      "restId": "610982",
+                      "restId": "439636",
                       "offerLogo": "offers/deal-of-day",
                       "descriptionTextColor": "#7302060C"
                     },
@@ -383,7 +383,7 @@
                       "couponCode": "USE YESVEMBER",
                       "description": "ABOVE ₹179",
                       "offerType": "offers",
-                      "restId": "610982",
+                      "restId": "439636",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE YESVEMBER"
@@ -404,7 +404,7 @@
                       "couponCode": "USE FLAVORFUL",
                       "description": "ABOVE ₹499",
                       "offerType": "offers",
-                      "restId": "610982",
+                      "restId": "439636",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FLAVORFUL"
@@ -425,7 +425,7 @@
                       "couponCode": "USE CELEBRATIONS",
                       "description": "ABOVE ₹899",
                       "offerType": "offers",
-                      "restId": "610982",
+                      "restId": "439636",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE CELEBRATIONS"
