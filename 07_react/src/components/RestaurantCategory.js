@@ -8,7 +8,7 @@ const RestaurantCategory = ({ data, showItems, onToggle }) => {
     <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4">
       <div
         className="flex justify-between cursor-pointer"
-        onClick={onToggle}  // ✅ Just notify parent, don't decide anything
+        onClick={onToggle}  // ust notify parent, don't decide anything
       >
         <span className="font-bold text-lg">
           {data?.title} ({data?.itemCards?.length || data?.categories?.length || 0})

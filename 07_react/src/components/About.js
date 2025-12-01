@@ -11,14 +11,9 @@ class About extends Component {
 
         this.state = {
             userInfo: {
-                name: "Loading...",
-                title: "",
-                about: "",
-                bio: "",
-                location: "",
-                email: "",
-                github: "",
-                linkedin: "",
+                about: "Loading...",
+                features: [],
+                techStack: []
             }
         };
 
@@ -33,7 +28,7 @@ class About extends Component {
         const json = await data.json();
 
         this.setState({
-            userInfo: json.user,
+            userInfo: json,
         });
 
         console.log("Fetched user data:", json);
@@ -42,7 +37,7 @@ class About extends Component {
  render() {
     console.log("Parent Render");
 
-    const { name, title, tagline, about, bio, location, email, github, linkedin } = this.state.userInfo;
+    const { about, features, techStack } = this.state.userInfo;
 
     return (
         <div>
@@ -62,17 +57,22 @@ class About extends Component {
 
             {/* Display data from GitHub API - shown only once */}
             <div className="text-center">
-                <h2>Name: {name}</h2>
-                <h3>Title: {title}</h3>
-                <p>Tagline: {tagline}</p>
-                <h3>About My Project:</h3>
-                <p>{about}</p>
-                <h3>About Me:</h3>
-                <p>{bio}</p>
-                <h3>Location: {location}</h3>
-                <h4>Email: {email}</h4>
-                <h4>GitHub: <a href={github} target="_blank" rel="noopener noreferrer">{github}</a></h4>
-                <h4>LinkedIn: <a href={linkedin} target="_blank" rel="noopener noreferrer">{linkedin}</a></h4>
+                <h3 className="font-semibold text-lg mb-2">About FoodExpress:</h3>
+                <p className="mb-4">{about}</p>
+                
+                <h3 className="font-semibold text-lg mb-2">Features:</h3>
+                <ul className="mb-4">
+                    {features && features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                    ))}
+                </ul>
+                
+                <h3 className="font-semibold text-lg mb-2">Tech Stack:</h3>
+                <ul>
+                    {techStack && techStack.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     );

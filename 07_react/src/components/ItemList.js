@@ -52,25 +52,27 @@ const ItemList = ({ items, dummy, showQuantity = false }) => {
             {/* Updated: display quantity */}
             {showQuantity && <p className="text-sm font-bold">Quantity: {item.quantity}</p>}
           </div>
-          
+
           {/* Right side: Image on top, Add/Remove buttons below */}
           <div className="w-3/12 p-4 flex flex-col items-center">
-            <img 
-              src={CDN_URL + item.card.info.imageId} 
-              className="w-full mb-2 rounded-lg object-cover aspect-[4/3]" 
+            <img
+              src={CDN_URL + item.card.info.imageId}
+              className="w-full mb-2 rounded-lg object-cover aspect-[4/3]"
             />
-            
+
             {/* Add item button */}
-            <button 
-              className="p-1 text-xs rounded-lg bg-black text-white shadow-md w-full"
+            <button
+              className="p-1 text-xs rounded-lg  bg-white text-black border-2 border-green-600 shadow-md w-full transition-all duration-200 
+                hover:scale-105 hover:bg-green-600 hover:text-white  active:scale-95 active:bg-green-700"
               onClick={() => handleAddItem(item)}
             >
               Add +
             </button>
 
             {/* Remove one item button */}
-            <button 
-              className="p-1 text-xs mt-1 rounded-lg bg-red-500 text-white shadow-md w-full"
+            <button
+              className="p-1 text-xs mt-1 rounded-lg bg-white text-black border-solid border-2 border-red-500 shadow-md w-full  transition-all duration-200 
+                hover:scale-105 hover:bg-red-600 hover:text-white  active:scale-95 active:bg-red-600"
               onClick={() => handleRemoveItem(item)}
             >
               Remove -

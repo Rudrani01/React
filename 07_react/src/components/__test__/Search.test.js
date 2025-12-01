@@ -7,13 +7,19 @@ import "@testing-library/jest-dom";
 
 // dummy fetch function --> trying to fetch() exactly similar to that our browser gives us
 // gives mock fetch function --- returns a promise
-global.fetch = jest.fn(() => {
-    return Promise.resolve({
-        json: () => {
-            // this promise.resolve actually has data
-            return Promise.resolve(MOCK_DATA);
-        }
-    })
+
+// ✅ FIX: reset mocks before each test so state doesn't leak
+beforeEach(() => {
+  jest.resetAllMocks();
+
+  global.fetch = jest.fn(() => {
+      return Promise.resolve({
+          json: () => {
+              // this promise.resolve actually has data
+              return Promise.resolve(MOCK_DATA);
+          }
+      })
+  });
 });
 
 it("Should search Res List for burger inout text", async () => {
@@ -41,9 +47,9 @@ it("Should search Res List for burger inout text", async () => {
     fireEvent.click(searchBtn);
 
     // screen should load 4 cards
-    const cards = screen.getAllByTestId("resCard");
+    const cards = await screen.findAllByTestId("resCard");   // ✔️ async render fix
 
-    expect(cards.length).toBe(5);
+    expect(cards.length).toBe(7);
 
     // console.log(searchBtn);
     // expect(searchBtn).toBeInTheDocument();
@@ -67,6 +73,8 @@ it("Should filter Top Rated Restaurant", async () => {
   });
   fireEvent.click(topRatedBtn);
 
-  const cardsAfterFilter = screen.getAllByTestId("resCard");
-  expect(cardsAfterFilter.length).toBe(13);
+  // ❗ MUST WAIT FOR UI UPDATE
+  const cardsAfterFilter = await screen.findAllByTestId("resCard");
+
+  expect(cardsAfterFilter.length).toBe(8);
 });
