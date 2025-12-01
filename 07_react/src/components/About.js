@@ -57,7 +57,7 @@ class About extends Component {
 
             {/* Display data from GitHub API - shown only once */}
             <div className="text-center">
-                <h3 className="font-semibold text-lg mb-2">About FoodExpress:</h3>
+                <h3 className="font-semibold text-lg mb-2">FOOD EXPRESS:</h3>
                 <p className="mb-4">{about}</p>
                 
                 <h3 className="font-semibold text-lg mb-2">Features:</h3>
