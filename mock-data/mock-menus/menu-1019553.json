@@ -33,7 +33,7 @@
           "card": {
             "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
             "info": {
-              "id": "1019553",
+              "id": "60035",
               "name": "Havmor Havfunn Ice Cream",
               "city": "Bangalore",
               "slugs": {
@@ -52,7 +52,7 @@
               ],
               "avgRating": 4,
               "feeDetails": {
-                "restaurantId": "1019553",
+                "restaurantId": "60035",
                 "fees": [
                   {
 
@@ -63,7 +63,7 @@
               "avgRatingString": "4.0",
               "totalRatingsString": "25 ratings",
               "sla": {
-                "restaurantId": "1019553",
+                "restaurantId": "60035",
                 "deliveryTime": 50,
                 "minDeliveryTime": 45,
                 "maxDeliveryTime": 50,
@@ -188,7 +188,7 @@
                 }
               ],
               "headerBanner": {
-                "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/1019553"
+                "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/60035035"
               },
               "ratingSlab": "RATING_SLAB_4",
               "orderabilityCommunication": {
@@ -288,7 +288,7 @@
                       "couponCode": "USE FREEDISH",
                       "description": "ON SELECT ITEMS",
                       "offerType": "offers",
-                      "restId": "1019553",
+                      "restId": "6003035",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FREEDISH"
@@ -309,7 +309,7 @@
                       "couponCode": "USE FLAT100",
                       "description": "ABOVE ₹599",
                       "offerType": "offers",
-                      "restId": "1019553",
+                      "restId": "6003035",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FLAT100"
@@ -330,7 +330,7 @@
                       "couponCode": "USE PARTY",
                       "description": "ABOVE ₹1000",
                       "offerType": "offers",
-                      "restId": "1019553",
+                      "restId": "6003035",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE PARTY"
@@ -351,7 +351,7 @@
                       "couponCode": "NO CODE REQUIRED",
                       "description": "ABOVE ₹399",
                       "offerType": "offers",
-                      "restId": "1019553",
+                      "restId": "6003035",
                       "offerLogo": "MARKETING_BANNERS/IMAGES/OFFERS/2025/11/30/8c558ee4-4d93-4c9a-8cc5-5f615532929a_YESBankMenuLogoNew1.png",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "NO CODE REQUIRED"
@@ -372,7 +372,7 @@
                       "couponCode": "USE FLAT550",
                       "description": "ABOVE ₹2499",
                       "offerType": "offers",
-                      "restId": "1019553",
+                      "restId": "6003035",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FLAT550"
