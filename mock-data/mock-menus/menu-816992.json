@@ -33,7 +33,7 @@
           "card": {
             "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
             "info": {
-              "id": "581495",
+              "id": "816992",
               "name": "Cheesecakes By CakeZone",
               "city": "Bangalore",
               "slugs": {
@@ -53,7 +53,7 @@
               "avgRating": 4.4,
               "veg": true,
               "feeDetails": {
-                "restaurantId": "581495",
+                "restaurantId": "816992",
                 "fees": [
                   {
 
@@ -64,7 +64,7 @@
               "avgRatingString": "4.4",
               "totalRatingsString": "112 ratings",
               "sla": {
-                "restaurantId": "581495",
+                "restaurantId": "816992",
                 "deliveryTime": 29,
                 "minDeliveryTime": 25,
                 "maxDeliveryTime": 30,
@@ -305,7 +305,7 @@
                       "expiryTime": "1970-01-01T00:00:00Z",
                       "description": "ON SELECT ITEMS |",
                       "offerType": "offers",
-                      "restId": "581495",
+                      "restId": "816992",
                       "offerLogo": "offers/deal-of-day",
                       "descriptionTextColor": "#7302060C"
                     },
@@ -325,7 +325,7 @@
                       "couponCode": "USE FLAVORFUL",
                       "description": "ABOVE ₹499",
                       "offerType": "offers",
-                      "restId": "581495",
+                      "restId": "816992",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FLAVORFUL"
@@ -346,7 +346,7 @@
                       "couponCode": "USE FLAT150",
                       "description": "ABOVE ₹799",
                       "offerType": "offers",
-                      "restId": "581495",
+                      "restId": "816992",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE FLAT150"
@@ -367,7 +367,7 @@
                       "couponCode": "USE XTRAPARTY",
                       "description": "ABOVE ₹3000",
                       "offerType": "offers",
-                      "restId": "581495",
+                      "restId": "816992",
                       "offerLogo": "offers/generic",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "USE XTRAPARTY"
@@ -388,7 +388,7 @@
                       "couponCode": "NO CODE REQUIRED",
                       "description": "ABOVE ₹399",
                       "offerType": "offers",
-                      "restId": "581495",
+                      "restId": "816992",
                       "offerLogo": "MARKETING_BANNERS/IMAGES/OFFERS/2025/11/30/8c558ee4-4d93-4c9a-8cc5-5f615532929a_YESBankMenuLogoNew1.png",
                       "descriptionTextColor": "#7302060C",
                       "primaryDescription": "NO CODE REQUIRED"
